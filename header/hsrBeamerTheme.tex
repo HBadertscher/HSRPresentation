@@ -10,6 +10,8 @@
 % - Hannes Badertscher
 % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
 
+\usetheme{default}
+\setbeamersize{sidebar width left=0pt,sidebar width right=0pt, text margin left=0pt, text margin right=0pt, }
 
 \usepackage[utf8]{inputenc}
 \usepackage[sc]{mathpazo}				% use palatino font!
@@ -28,11 +30,20 @@
 \usepackage[american currents]{circuitikz}
 \usepackage{tikz-timing}[2009/12/09]
 
-% Find institute
-\input{header/hsrInstitutes}
 
 \defbeamertemplate*{title page}{customized}[1][]{
-	\begin{tikzpicture}
 
+	\begin{tikzpicture}
+		\useasboundingbox (0,0) rectangle (\the\paperwidth,\the\paperheight);
+		
+		% Background image
+		\node[anchor=south west,inner sep=0pt] at (0,0) {\includegraphics[width=\the\paperwidth]{\HSRBackground}};
+		
+		% HSR square
+		\draw[draw=none,fill=HSRBlue,opacity=0.85] (6.8mm,9.1mm) rectangle (86.8mm,89.1mm);
+		
+		% HSR logo
+		\draw[draw=none,fill=white] (0mm,4.5mm) rectangle (34.5mm,16.4mm);
+		\node[anchor=south west,inner sep=0] at (4.5mm,4.5mm) {\includegraphics[width=30mm]{header/HSR_Logo_RGB_72.jpg}};
 	\end{tikzpicture}
 }
