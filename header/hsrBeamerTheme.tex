@@ -10,6 +10,7 @@
 % - Hannes Badertscher
 % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
 
+% Packages
 \usetheme{default}
 \setbeamersize{sidebar width left=0pt,sidebar width right=0pt, text margin left=0pt, text margin right=0pt, }
 
@@ -27,17 +28,28 @@
 
 \usepackage{tikz}
 \usetikzlibrary{arrows,backgrounds,fit,positioning,petri,trees}
+\usetikzlibrary{calc}
 \usepackage[american currents]{circuitikz}
 \usepackage{tikz-timing}[2009/12/09]
 
+\usepackage{datetime}
+\newdateformat{titledate}{\THEDAY.~\monthname\space\THEYEAR}
 
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+% Own commands
+\title[\TitleShort]{\Title}
+\subtitle{\Subtitle}
+\author[\AuthorShort]{\Author}
+
+
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+% Title page
 \defbeamertemplate*{title page}{customized}[1][]{
-
 	\begin{tikzpicture}
 		\useasboundingbox (0,0) rectangle (\the\paperwidth,\the\paperheight);
 		
 		% Background image
-		\node[anchor=south west,inner sep=0pt] at (0,0) {\includegraphics[width=\the\paperwidth]{\HSRBackground}};
+		\node[anchor=south west,inner sep=0pt] at (0,0) {\includegraphics[width=\the\paperwidth]{\Background}};
 		
 		% HSR square
 		\draw[draw=none,fill=HSRBlue,opacity=0.85] (6.8mm,9.1mm) rectangle (86.8mm,89.1mm);
@@ -45,5 +57,13 @@
 		% HSR logo
 		\draw[draw=none,fill=white] (0mm,4.5mm) rectangle (34.5mm,16.4mm);
 		\node[anchor=south west,inner sep=0] at (4.5mm,4.5mm) {\includegraphics[width=30mm]{header/HSR_Logo_RGB_72.jpg}};
+		
+		% Text
+		\node[anchor=west] at (14.8mm,79.1mm) (topic){\parbox{65mm}{\color{white}\Topic}};
+		\node[anchor=west, below=3mm of topic] (title) {\parbox{65mm}{\color{white}\LARGE\Title}};
+		\node[anchor=west, below=1mm of title] (subtitle) {\parbox{65mm}{\color{white}\Subtitle}};
+    	\node[anchor=west, below=3mm of subtitle] (institute) {\parbox{65mm}{\includegraphics[width=30mm]{\Institute}}};
+		\node[anchor=west] at (14.8mm,22mm) (date) {\parbox{65mm}{\color{white}\titledate\today}};
+        \node[anchor=west, above=1mm of date] (author) {\parbox{65mm}{\color{white}\Author}};
 	\end{tikzpicture}
 }
