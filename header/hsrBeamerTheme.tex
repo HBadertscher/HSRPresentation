@@ -11,16 +11,13 @@
 % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
 
 
-\usetheme{Antibes}
-\usecolortheme{default}
-
 \usepackage[utf8]{inputenc}
 \usepackage[sc]{mathpazo}				% use palatino font!
 \linespread{1.05}        				% palatino needs a bit more space!
 \usepackage[T1]{fontenc}
 \usepackage[english]{babel}	
 
-\usepackage{HSRColors}
+\usepackage{header/HSRColors}
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{booktabs}
@@ -30,3 +27,12 @@
 \usetikzlibrary{arrows,backgrounds,fit,positioning,petri,trees}
 \usepackage[american currents]{circuitikz}
 \usepackage{tikz-timing}[2009/12/09]
+
+% Find institute
+\input{header/hsrInstitutes}
+
+\defbeamertemplate*{title page}{customized}[1][]{
+	\begin{tikzpicture}
+
+	\end{tikzpicture}
+}
