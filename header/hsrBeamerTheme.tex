@@ -14,6 +14,7 @@
 \usetheme{default}
 
 
+
 \usepackage[utf8]{inputenc}
 \usepackage[sc]{mathpazo}				% use palatino font!
 \linespread{1.05}        				% palatino needs a bit more space!
@@ -41,10 +42,17 @@
 \subtitle{\Subtitle}
 \author[\AuthorShort]{\Author}
 
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+% Color scheme
+\setbeamercolor*{frametitle}{fg=white,bg=HSRBlue}
+\setbeamercolor*{section in toc}{fg=HSRSchwarz}
+\setbeamercolor*{section in toc shaded}{fg=HSRSchwarz80}
+
 
 % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
 % Title page
 \defbeamertemplate*{title page}{customized}[1][]{
+	\setbeamertemplate{footline}{}
 	\begin{tikzpicture}[remember picture,overlay,shift=(current page.south west)]
 
 		\useasboundingbox (0,0) rectangle (\the\paperwidth,\the\paperheight);
@@ -69,3 +77,18 @@
         
 	\end{tikzpicture}
 }
+
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+% Footer
+\setbeamertemplate{footline}
+{
+	\pgfdeclareimage[width=2.5cm]{HSRLogo}{header/HSR_Logo_RGB_72.jpg}%
+	\begin{beamercolorbox}[sep=1em,wd=\paperwidth,leftskip=0.5cm,rightskip=0.5cm]{HSRSchwarz}
+		\hrule
+		\vspace{0.55cm}
+		\pgfbox[left,center]{\hspace{0.3cm}\pgfuseimage{HSRLogo}}
+		\hfil
+		\scriptsize{\insertframenumber}
+	\end{beamercolorbox}%
+}
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
