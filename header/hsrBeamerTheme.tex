@@ -13,13 +13,12 @@
 % Packages
 \usetheme{default}
 
-
-
 \usepackage[utf8]{inputenc}
 \usepackage[sc]{mathpazo}				% use palatino font!
 \linespread{1.05}        				% palatino needs a bit more space!
 \usepackage[T1]{fontenc}
 \usepackage[english]{babel}	
+\usepackage{etoolbox}
 
 \usepackage{header/HSRColors}
 \usepackage{amsmath}
@@ -71,7 +70,11 @@
 		\node[anchor=west] at (14.8mm,79.1mm) (topic){\parbox{65mm}{\color{white}\Topic}};
 		\node[anchor=west, below=3mm of topic] (title) {\parbox{65mm}{\color{white}\LARGE\Title}};
 		\node[anchor=west, below=1mm of title] (subtitle) {\parbox{65mm}{\color{white}\Subtitle}};
-    	\node[anchor=west, below=3mm of subtitle] (institute) {\parbox{65mm}{\includegraphics[width=30mm]{\Institute}}};
+		
+		\ifdefempty{\Institute}{}{
+			\node[anchor=west, below=3mm of subtitle] (institute) {\parbox{65mm}{\includegraphics[width=40mm]{\Institute}}};
+		}
+
 		\node[anchor=west] at (14.8mm,22mm) (date) {\parbox{65mm}{\color{white}\titledate\today}};
         \node[anchor=west, above=1mm of date] (author) {\parbox{65mm}{\color{white}\Author}};
         
