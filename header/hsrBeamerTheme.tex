@@ -20,13 +20,19 @@
 \usepackage[english]{babel}	
 \usepackage{etoolbox}
 
+\usepackage{tabularx}
+
+\usepackage{adjustbox}
+\usepackage{caption}
+
 \usepackage{header/HSRColors}
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{booktabs}
 \usepackage{epstopdf}
 
-\input{header/listings.tex}
+\usepackage{listings}
+\usepackage{matlab-prettifier}
 
 \usepackage{tikz}
 \usetikzlibrary{arrows,backgrounds,fit,positioning,petri,trees}
@@ -46,6 +52,7 @@
 % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
 % Color scheme
 \setbeamercolor*{frametitle}{fg=white,bg=HSRBlue}
+\setbeamertemplate{section in toc}{\hspace{1em}{\scriptsize\color{HSRBlue}$\blacksquare$}~\inserttocsection}
 \setbeamercolor*{section in toc}{fg=HSRSchwarz}
 \setbeamercolor*{section in toc shaded}{fg=HSRSchwarz80}
 
