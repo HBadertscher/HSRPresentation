@@ -14,8 +14,6 @@
 \usetheme{default}
 
 \usepackage[utf8]{inputenc}
-\usepackage[sc]{mathpazo}				% use palatino font!
-\linespread{1.05}        				% palatino needs a bit more space!
 \usepackage[T1]{fontenc}
 \usepackage[english]{babel}	
 \usepackage{etoolbox}
@@ -42,17 +40,19 @@
 \title[\TitleShort]{\Title}
 \subtitle{\Subtitle}
 \author[\AuthorShort]{\Author}
+\newcommand*{\True}{true}
 
 % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
 % Color scheme
 \setbeamercolor*{frametitle}{fg=white,bg=HSRBlue}
+\setbeamertemplate{section in toc}{\hspace{1em}{\scriptsize\color{HSRBlue}$\blacksquare$}~\inserttocsection}
 \setbeamercolor*{section in toc}{fg=HSRSchwarz}
-\setbeamercolor*{section in toc shaded}{fg=HSRSchwarz80}
+\setbeamercolor*{section in toc shaded}{fg=HSRSchwarz}
 
 \setbeamertemplate{itemize item}[square]
-\setbeamercolor{itemize item}{fg=HSRBlue}
+\setbeamercolor*{itemize item}{fg=HSRBlue}
 \setbeamertemplate{itemize subitem}[square]
-\setbeamercolor{itemize subitem}{fg=HSRLightGray}
+\setbeamercolor*{itemize subitem}{fg=HSRLightGray}
 
 \setbeamercolor{enumerate item}{fg=HSRBlue}
 
@@ -109,4 +109,17 @@
 	\end{tikzpicture}
 }
 
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+
+% TOC at beginning of every section
+
+\ifx \TocAtSection \True
+	\AtBeginSection[]
+	{
+	  \begin{frame}<beamer>
+	    \frametitle{\contentsname}
+	    \tableofcontents[currentsection]
+	  \end{frame}
+	}
+\fi
 % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %

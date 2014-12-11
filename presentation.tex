@@ -20,6 +20,7 @@
 \newcommand*{\Topic}{Bereich}
 \newcommand*{\Institute}{institutes/ICOM.jpg}
 \newcommand*{\Background}{backgrounds/Titelbild_Abend.jpg}
+\newcommand*{\TocAtSection}{false}
 
 \include{header/hsrBeamerTheme}
 
@@ -28,12 +29,23 @@
 
      \frame[plain]{\titlepage}
   
-    \begin{frame}{Ablauf}
-        \tableofcontents
-    \end{frame}
+	\begin{frame}{\contentsname}
+		\tableofcontents
+	\end{frame}
   
     \section{First section}
-    \begin{frame}{Frame title}
+    \begin{frame}{Frame 1}
+        Frame content
+    \end{frame}
+    \begin{frame}{Frame 2}
+        Frame content
+    \end{frame}
+    
+    \section{Second section}
+    \begin{frame}{Frame 3}
+        Frame content
+    \end{frame}
+    \begin{frame}{Frame 4}
         Frame content
     \end{frame}
 
