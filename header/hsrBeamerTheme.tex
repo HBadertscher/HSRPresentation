@@ -26,22 +26,25 @@
 \usepackage{tabularx}
 
 \usepackage{adjustbox}
-\usepackage{caption}
 
 \usepackage{header/HSRColors}
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{booktabs}
 \usepackage{epstopdf}
+\usepackage{multicol}
 
 \usepackage{listings}
 \usepackage{matlab-prettifier}
 
 \usepackage{tikz}
 \usetikzlibrary{arrows,backgrounds,fit,positioning,petri,trees}
-\usetikzlibrary{calc}
+\usetikzlibrary{calc,shapes}
 \usepackage[american currents]{circuitikz}
 \usepackage{tikz-timing}[2009/12/09]
+\usepackage{pgfplots}
+\pgfplotsset{compat = 1.3}
+\usepackage{siunitx}
 
 \usepackage{datetime}
 \newdateformat{titledate}{\THEDAY.~\monthname\space\THEYEAR}
@@ -121,7 +124,6 @@
 }
 
 % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
-
 % TOC at beginning of every section
 
 \ifx \TocAtSection \True
@@ -133,4 +135,3 @@
 	  \end{frame}
 	}
 \fi
-% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
