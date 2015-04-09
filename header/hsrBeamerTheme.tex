@@ -52,6 +52,14 @@
 \usepackage{datetime}
 \newdateformat{titledate}{\THEDAY.~\monthname\space\THEYEAR}
 
+\hypersetup{
+		pdftitle={\Title},
+		pdfauthor={\Author},
+		pdfsubject={\Subtitle},
+		pdfcreator={LaTeX with hyperref and Beamer}
+}
+
+
 % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
 % Own commands
 \title[\TitleShort]{\Title}
@@ -71,7 +79,10 @@
 \setbeamertemplate{itemize subitem}[square]
 \setbeamercolor*{itemize subitem}{fg=HSRLightGray}
 
-\setbeamercolor{enumerate item}{fg=HSRBlue}
+\setbeamercolor{enumerate item}{fg=black}
+
+\setbeamertemplate{caption}{\scshape\scriptsize\textcolor{HSRBlue}{\insertcaptionname:}~\insertcaption}
+
 
 % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
 % Title page
