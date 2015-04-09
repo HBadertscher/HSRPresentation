@@ -111,8 +111,15 @@
 \setbeamertemplate{footline}
 {
 	\begin{tikzpicture}
+		\pgfmathparse{\paperwidth/\inserttotalframenumber*\insertframenumber}
+		\pgfmathresult \let\hsrBeamerProgressWidth\pgfmathresult
+	
 		\useasboundingbox (0,0) rectangle (\the\paperwidth,1.2cm);
 		\draw[color=HSRSchwarz] (0,1.2cm) -- (\the\paperwidth,1.2cm);
+
+        \ifx \ProgressBar \True
+    		\draw[draw,fill] (0,1.2cm) rectangle (\hsrBeamerProgressWidth pt,1.15cm);
+        \fi
 		
 		\node[inner sep=0pt,anchor=west] at (1em,0.6cm)  {\includegraphics[width=2.5cm]{header/HSR_Logo_RGB_72.jpg}};
 		
