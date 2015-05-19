@@ -26,7 +26,12 @@
 \usepackage{amssymb}
 
 % Babel
-\usepackage[english,ngerman]{babel}	
+\newcommand*{\LangDE}{de}
+\ifx \Lang \LangDE
+    \usepackage[english,ngerman]{babel}
+\else
+    \usepackage[ngerman,english]{babel}
+\fi
 
 % Tables
 \usepackage{booktabs}
