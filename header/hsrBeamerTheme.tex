@@ -98,8 +98,16 @@
 \setbeamercolor*{itemize item}{fg=HSRBlue}
 \setbeamertemplate{itemize subitem}[square]
 \setbeamercolor*{itemize subitem}{fg=HSRLightGray}
+\setbeamertemplate{itemize subsubitem}[triangle]
+\setbeamercolor*{itemize subsubitem}{fg=HSRLightGray}
 
-\setbeamercolor{enumerate item}{fg=black}
+\setbeamertemplate{enumerate item}{\arabic{enumi})}
+\setbeamercolor{enumerate item}{fg=HSRBlue}
+\setbeamertemplate{enumerate subitem}{\roman{enumii})}
+\setbeamercolor{enumerate subitem}{fg=black}
+\setbeamertemplate{enumerate subsubitem}{\alph{enumiii})}
+\setbeamercolor{enumerate subsubitem}{fg=black}
+
 
 \setbeamertemplate{caption}{\scshape\scriptsize\textcolor{HSRBlue}{\insertcaptionname:}~\insertcaption}
 
