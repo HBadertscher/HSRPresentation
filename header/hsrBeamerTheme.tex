@@ -13,58 +13,73 @@
 % Packages
 \usetheme{default}
 
+% Fonts
 \usepackage[T1]{fontenc}
-\usepackage[sc]{mathpazo}				% use palatino font!
-\linespread{1.05}        				% palatino needs a bit more space!
+\usepackage[sc]{mathpazo}               % use palatino font!
+\linespread{1.05}                       % palatino needs a bit more space!
 \usepackage[T1,small,euler-digits]{eulervm}
-\usefonttheme{professionalfonts}
+\usefonttheme{professionalfonts}        % Setup beamer to use these fonts
 
-\usepackage[english]{babel}	
-\usepackage{etoolbox}
-
-\usepackage{tabularx}
-
-\usepackage{adjustbox}
-
-\usepackage{header/HSRColors}
+% Math
 \usepackage{amsmath}
 \usepackage{amssymb}
+
+% Babel
+\usepackage[english,ngerman]{babel}	
+
+% Tables
 \usepackage{booktabs}
-\usepackage{epstopdf}
+\usepackage{tabularx}
 \usepackage{multicol}
 
-\usepackage{listings}
-\usepackage{matlab-prettifier}
+% Colors
+\usepackage{xcolor}
+\usepackage{header/HSRColors}
 
+% Graphics
+\usepackage{epstopdf}
 \usepackage{tikz}
-\usetikzlibrary{arrows,backgrounds,fit,positioning,petri,trees}
-\usetikzlibrary{calc,shapes}
+\usetikzlibrary{arrows,backgrounds,fit,positioning,calc,shapes}
 \usepackage[american currents]{circuitikz}
 \usepackage{tikz-timing}[2009/12/09]
 \usepackage{pgfplots}
 \pgfplotsset{compat = 1.3}
-\usepackage{siunitx}
 
+% Listings
+\usepackage{listings}
+\usepackage{matlab-prettifier}
+
+% SI Units
+\usepackage{siunitx}
+\sisetup{detect-all,sticky-per,per-mode=symbol}
+
+% Chemical formulae
+\usepackage[version=3]{mhchem}
+
+% EToolbox for e-TeX (programming)
+\usepackage{etoolbox}
+
+% HSR Colorbox
 \usepackage{tcolorbox}
 \newtcolorbox{HSRBox}[1]{colback=HSRWhite,colframe=HSRBlue,title=#1}
 
+% Setup date-time format
 \usepackage{datetime}
 \newdateformat{titledate}{\THEDAY.~\monthname\space\THEYEAR}
 
-\hypersetup{
-		pdftitle={\Title},
-		pdfauthor={\Author},
-		pdfsubject={\Subtitle},
-		pdfcreator={LaTeX with hyperref and Beamer}
-}
-
 
 % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
-% Own commands
+% Setup Document
 \title[\TitleShort]{\Title}
 \subtitle{\Subtitle}
 \author[\AuthorShort]{\Author}
-\newcommand*{\True}{true}
+
+\hypersetup{
+    pdftitle={\Title},
+    pdfauthor={\Author},
+    pdfsubject={\Subtitle},
+    pdfcreator={LaTeX with hyperref and Beamer}
+}
 
 % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
 % Color scheme
@@ -118,6 +133,7 @@
 
 % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
 % Footer
+\newcommand*{\True}{true}
 \setbeamertemplate{footline}
 {
 	\begin{tikzpicture}
