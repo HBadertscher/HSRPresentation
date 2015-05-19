@@ -101,34 +101,34 @@
 % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
 % Title page
 \defbeamertemplate*{title page}{customized}[1][]{
-	\setbeamertemplate{footline}{}
-	\begin{tikzpicture}[remember picture,overlay,shift=(current page.south west)]
+    \setbeamertemplate{footline}{}
+    \begin{tikzpicture}[remember picture,overlay,shift=(current page.south west)]
 
-		\useasboundingbox (0,0) rectangle (\the\paperwidth,\the\paperheight);
-		
-		% Background image
-		\node[anchor=south west,inner sep=0pt] at (0,0) {\includegraphics[width=\the\paperwidth]{\Background}};
-				
-		% HSR square
-		\draw[draw=none,fill=HSRBlue,opacity=0.85] (6.8mm,9.1mm) rectangle (86.8mm,89.1mm);
-		
-		% HSR logo
-		\draw[draw=none,fill=white] (0mm,4.5mm) rectangle (34.5mm,16.4mm);
-		\node[anchor=south west,inner sep=0] at (4.5mm,4.5mm) {\includegraphics[width=30mm]{header/HSR_Logo_RGB_72.jpg}};
-		
-		% Text
-		\node[anchor=west] at (14.8mm,79.1mm) (topic){\parbox{65mm}{\color{white}\Topic}};
-		\node[anchor=west, below=3mm of topic] (title) {\parbox{65mm}{\color{white}\LARGE\Title}};
-		\node[anchor=west, below=1mm of title] (subtitle) {\parbox{65mm}{\color{white}\Subtitle}};
-		
-		\ifdefempty{\Institute}{}{
-			\node[anchor=west, below=3mm of subtitle] (institute) {\parbox{65mm}{\includegraphics[width=40mm]{\Institute}}};
-		}
+        \useasboundingbox (0,0) rectangle (\the\paperwidth,\the\paperheight);
 
-		\node[anchor=west] at (14.8mm,22mm) (date) {\parbox{65mm}{\color{white}\titledate\today}};
+        % Background image
+        \node[anchor=south west,inner sep=0pt] at (0,0) {\includegraphics[width=\the\paperwidth]{\Background}};
+
+        % HSR square
+        \draw[draw=none,fill=HSRBlue,opacity=0.85] (6.8mm,9.1mm) rectangle (86.8mm,89.1mm);
+
+        % HSR logo
+        \draw[draw=none,fill=white] (0mm,4.5mm) rectangle (34.5mm,16.4mm);
+        \node[anchor=south west,inner sep=0] at (4.5mm,4.5mm) {\includegraphics[width=30mm]{header/HSR_Logo_RGB_72.jpg}};
+
+        % Text
+        \node[anchor=west] at (14.8mm,79.1mm) (topic){\parbox{65mm}{\color{white}\Topic}};
+        \node[anchor=west, below=3mm of topic] (title) {\parbox{65mm}{\color{white}\LARGE\Title}};
+        \node[anchor=west, below=1mm of title] (subtitle) {\parbox{65mm}{\color{white}\Subtitle}};
+
+        \ifdefempty{\Institute}{}{
+            \node[anchor=west, below=3mm of subtitle] (institute) {\parbox{65mm}{\includegraphics[width=40mm]{\Institute}}};
+        }
+
+        \node[anchor=west] at (14.8mm,22mm) (date) {\parbox{65mm}{\color{white}\titledate\today}};
         \node[anchor=west, above=1mm of date] (author) {\parbox{65mm}{\color{white}\Author}};
-        
-	\end{tikzpicture}
+
+    \end{tikzpicture}
 }
 
 % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
@@ -136,38 +136,38 @@
 \newcommand*{\True}{true}
 \setbeamertemplate{footline}
 {
-	\begin{tikzpicture}
-		\pgfmathparse{\paperwidth/\inserttotalframenumber*\insertframenumber}
-		\pgfmathresult \let\hsrBeamerProgressWidth\pgfmathresult
-	
-		\useasboundingbox (0,0) rectangle (\the\paperwidth,1.2cm);
-		\draw[color=HSRSchwarz] (0,1.2cm) -- (\the\paperwidth,1.2cm);
+    \begin{tikzpicture}
+        \pgfmathparse{\paperwidth/\inserttotalframenumber*\insertframenumber}
+        \pgfmathresult \let\hsrBeamerProgressWidth\pgfmathresult
+
+        \useasboundingbox (0,0) rectangle (\the\paperwidth,1.2cm);
+        \draw[color=HSRSchwarz] (0,1.2cm) -- (\the\paperwidth,1.2cm);
 
         \ifx \ProgressBar \True
-    		\draw[draw,fill] (0,1.2cm) rectangle (\hsrBeamerProgressWidth pt,1.15cm);
+            \draw[draw,fill] (0,1.2cm) rectangle (\hsrBeamerProgressWidth pt,1.15cm);
         \fi
-		
-		\node[inner sep=0pt,anchor=west] at (1em,0.6cm)  {\includegraphics[width=2.5cm]{header/HSR_Logo_RGB_72.jpg}};
-		
-		\node[inner sep=0pt,anchor=center] at (0.5*\the\paperwidth,0.8cm){\scriptsize{\insertframenumber}};
-		\node[inner sep=0pt,anchor=center] at (0.5*\the\paperwidth,0.4cm){\scriptsize{\AuthorShort}};
-		
-		\ifdefempty{\Institute}{}{
-			\node[inner sep=0pt,anchor=east] at (\the\paperwidth-1em,0.6cm) {\includegraphics[width=3cm]{\Institute}};
-		}
-	
-	\end{tikzpicture}
+
+        \node[inner sep=0pt,anchor=west] at (1em,0.6cm)  {\includegraphics[width=2.5cm]{header/HSR_Logo_RGB_72.jpg}};
+
+        \node[inner sep=0pt,anchor=center] at (0.5*\the\paperwidth,0.8cm){\scriptsize{\insertframenumber}};
+        \node[inner sep=0pt,anchor=center] at (0.5*\the\paperwidth,0.4cm){\scriptsize{\AuthorShort}};
+
+        \ifdefempty{\Institute}{}{
+            \node[inner sep=0pt,anchor=east] at (\the\paperwidth-1em,0.6cm) {\includegraphics[width=3cm]{\Institute}};
+        }
+
+    \end{tikzpicture}
 }
 
 % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
 % TOC at beginning of every section
 
 \ifx \TocAtSection \True
-	\AtBeginSection[]
-	{
-	  \begin{frame}<beamer>
-	    \frametitle{\contentsname}
-	    \tableofcontents[currentsection]
-	  \end{frame}
-	}
+    \AtBeginSection[]
+    {
+        \begin{frame}<beamer>
+            \frametitle{\contentsname}
+            \tableofcontents[currentsection]
+        \end{frame}
+    }
 \fi
