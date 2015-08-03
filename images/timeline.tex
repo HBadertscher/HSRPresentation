@@ -1,0 +1,17 @@
+\begin{tikzpicture}[>=latex,
+    milestone/.style={circle,inner sep=2pt,draw=HSRBlue,fill=HSRBlue}
+]
+
+    % Timeline
+    \draw[ultra thick,HSRBlue,->,shorten >=-6pt] (0,0) .. controls (2,0) and (6,4) .. (8,4)
+    
+    node[pos=0.00,milestone,fill=white] {}
+    node[pos=0.18,milestone,label={[align=left]below right:Next Step}] {}
+    node[pos=0.4,milestone,label={[align=left]below right:Do more\\intelligent stuff}] {}
+    node[pos=0.6,milestone,label={[align=left]below right:Improve everything}] {}
+    node[pos=0.8,milestone,label={[align=left]below right:Never settle}] {}
+    
+    ;
+
+
+\end{tikzpicture}
