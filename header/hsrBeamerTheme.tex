@@ -123,7 +123,7 @@
         \useasboundingbox (0,0) rectangle (\the\paperwidth,\the\paperheight);
 
         % Background image
-        \node[anchor=south west,inner sep=0pt] at (0,0) {\includegraphics[width=\the\paperwidth]{\Background}};
+        \node at (current page.center) {\includegraphics[width=\the\paperwidth]{\Background}};
 
         % HSR square
         \draw[draw=none,fill=HSRBlue,opacity=0.85] (6.8mm,9.1mm) rectangle (86.8mm,89.1mm);
