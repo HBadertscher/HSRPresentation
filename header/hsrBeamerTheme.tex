@@ -123,14 +123,14 @@
         \useasboundingbox (0,0) rectangle (\the\paperwidth,\the\paperheight);
 
         % Background image
-        \node[anchor=south west,inner sep=0pt] at (0,0) {\includegraphics[width=\the\paperwidth]{\Background}};
+        \node at (current page.center) {\includegraphics[width=\the\paperwidth]{\Background}};
 
         % HSR square
         \draw[draw=none,fill=HSRBlue,opacity=0.85] (6.8mm,9.1mm) rectangle (86.8mm,89.1mm);
 
         % HSR logo
         \draw[draw=none,fill=white] (0mm,4.5mm) rectangle (34.5mm,16.4mm);
-        \node[anchor=south west,inner sep=0] at (4.5mm,4.5mm) {\includegraphics[width=30mm]{header/HSR_Logo_RGB_72.jpg}};
+        \node[anchor=south west,inner sep=0] at (4.5mm,4.5mm) {\includegraphics[width=30mm]{header/HSR_Logo_CMYK.eps}};
 
         % Text
         \node[anchor=west] at (14.8mm,79.1mm) (topic){\parbox{65mm}{\color{white}\Topic}};
@@ -163,7 +163,7 @@
             \draw[draw,fill] (0,1.2cm) rectangle (\hsrBeamerProgressWidth pt,1.15cm);
         \fi
 
-        \node[inner sep=0pt,anchor=west] at (1em,0.6cm)  {\includegraphics[width=2.5cm]{header/HSR_Logo_RGB_72.jpg}};
+        \node[inner sep=0pt,anchor=west] at (1em,0.6cm)  {\includegraphics[width=2.5cm]{header/HSR_Logo_CMYK.eps}};
 
         \node[inner sep=0pt,anchor=center] at (0.5*\the\paperwidth,0.8cm){\scriptsize{\insertframenumber}};
         \node[inner sep=0pt,anchor=center] at (0.5*\the\paperwidth,0.4cm){\scriptsize{\AuthorShort}};
