@@ -1,6 +1,8 @@
 HSRPresentation
 =========
 
+[![Build Status](https://travis-ci.org/HBadertscher/HSRPresentation.svg?branch=master)](https://travis-ci.org/HBadertscher/HSRPresentation)
+
 A template for presentations using LaTeX and Beamer. Wherever possible the 
 corporate identity (CI) of HSR University of Applied Sciences of Eastern Switzerland
 in Rapperswil is applied.

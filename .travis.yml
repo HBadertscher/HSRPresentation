@@ -1,0 +1,13 @@
+before_install:
+- sudo apt-get update
+- sudo apt-get install -y texlive-latex-extra texlive-lang-german texlive-math-extra texlive-fonts-extra texlive-science
+script:
+- pdflatex -interaction=nonstopmode presentation
+- pdflatex -interaction=nonstopmode presentation
+deploy:
+  provider: releases
+  api_key: $GITHUB_RELEASE_TOKEN
+  file:
+   - ./presentation.pdf
+  skip_cleanup: true
+
